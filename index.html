@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explore Historic Maharashtra</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mukta:wght@300;400;500;600;700;800&family=Yatra+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body class="bg-[#0A1120] text-[#F1F5F9] min-h-screen font-sans overflow-x-hidden">
+    <div class="app-container relative">
+        <!-- Navbar -->
+        <header class="glass-nav sticky top-0">
+            <div class="flex items-center space-x-3 cursor-pointer group" onclick="navigate('home')">
+                <div class="w-8 h-8 saffron-gradient rounded-full shadow-[0_0_15px_rgba(249,115,22,0.4)]"></div>
+                <span class="text-xl font-bold tracking-tighter">MAHA<span class="text-orange-500 font-marathi tracking-normal font-normal">EXPLORE</span></span>
+            </div>
+            <nav class="flex space-x-6 md:space-x-10 items-center">
+                <button onclick="navigate('home')" class="nav-btn nav-link" id="nav-home">Explore</button>
+                <button onclick="navigate('about')" class="nav-btn nav-link" id="nav-about">Our Story</button>
+                <div class="hidden md:block h-8 w-[1px] bg-white/20"></div>
+                <div class="hidden md:block px-4 py-1.5 rounded border border-orange-500/50 text-orange-500 text-xs font-bold uppercase tracking-widest">INDIA</div>
+            </nav>
+        </header>
+
+        <!-- Main Content Area -->
+        <main class="flex-grow w-full mx-auto relative overflow-hidden">
+            
+            <!-- Page 1: Home -->
+            <section id="page-home" class="page-section hidden animate-fade-in flex-col items-center justify-center space-y-12 h-full px-6 md:px-12 py-12">
+                <div class="text-center space-y-4 max-w-3xl mx-auto">
+                    <h1 class="text-5xl md:text-6xl font-black uppercase tracking-tight leading-none text-white">
+                        Historic<br/>
+                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-red-600 font-marathi font-normal tracking-normal capitalize">Maharashtra</span>
+                    </h1>
+                    <p class="text-slate-400 text-sm tracking-widest uppercase font-semibold">
+                        Land of Warriors, Temples, and Modern Marvels
+                    </p>
+                </div>
+                
+                <div id="cities-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 w-full max-w-7xl mx-auto">
+                    <!-- Injected via script.js -->
+                </div>
+            </section>
+
+            <!-- Page 2: City Hub -->
+            <section id="page-city" class="page-section hidden animate-fade-in flex-col h-full p-6 md:p-12 space-y-8 max-w-7xl mx-auto">
+                <div class="flex flex-col md:flex-row items-start md:items-center justify-between border-b border-white/10 pb-6 gap-4">
+                    <div class="space-y-1">
+                        <p class="text-orange-500 text-xs font-bold tracking-[0.3em] uppercase">Exploring City Hub</p>
+                        <h2 id="city-title" class="text-5xl font-bold tracking-tighter text-white font-marathi font-normal capitalize"></h2>
+                    </div>
+                    <button onclick="navigate('home')" class="glass-btn flex items-center gap-2">
+                        ← Back to Cities
+                    </button>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 flex-grow">
+                    <div class="space-y-8">
+                        <div class="relative h-64 overflow-hidden rounded-2xl glass-card">
+                            <img id="city-image" src="" alt="City" class="w-full h-full object-cover">
+                            <div class="absolute bottom-4 left-4 z-20">
+                                <span id="city-tagline" class="backdrop-blur-[12px] bg-black/50 border border-white/20 text-[#F97316] rounded px-3 py-1 text-[10px] font-bold uppercase tracking-widest"></span>
+                            </div>
+                        </div>
+
+                        <div class="glass-card p-8 rounded-2xl border-l-4 border-l-orange-500">
+                            <h4 class="text-xs font-black text-orange-500 uppercase tracking-widest mb-4">History</h4>
+                            <p id="city-history" class="text-slate-300 text-sm leading-relaxed"></p>
+                        </div>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div class="glass-card p-6 rounded-2xl">
+                                <h4 class="text-xs font-black text-slate-400 uppercase tracking-widest mb-2">Best Time</h4>
+                                <p id="city-best-time" class="text-lg font-semibold text-white"></p>
+                            </div>
+                            <div class="glass-card p-6 rounded-2xl">
+                                <h4 class="text-xs font-black text-slate-400 uppercase tracking-widest mb-2">Culture</h4>
+                                <p id="city-culture" class="text-lg font-semibold text-white"></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="glass-card p-8 rounded-2xl bg-gradient-to-br from-white/5 to-transparent h-fit">
+                        <h4 class="text-xs font-black text-orange-500 uppercase tracking-widest mb-6">Key Attractions</h4>
+                        <ul id="city-attractions" class="space-y-4 text-slate-200 font-medium">
+                            <!-- Injected via script.js -->
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Page 3: About -->
+            <section id="page-about" class="page-section hidden animate-fade-in flex-col items-center justify-center space-y-8 h-full px-6 md:px-12 py-24 text-center">
+                <div class="w-24 h-24 saffron-gradient rounded-full mx-auto flex items-center justify-center shadow-[0_0_30px_rgba(249,115,22,0.3)]">
+                    <span class="text-4xl text-white">🏛️</span>
+                </div>
+                <div class="max-w-2xl space-y-6">
+                    <h2 class="text-4xl font-black uppercase text-white font-marathi font-normal capitalize tracking-tight">Legacy of the Greats</h2>
+                    <p class="text-slate-400 leading-relaxed italic text-lg hover:text-slate-300 transition-colors">
+                        Maharashtra is not just a state; it is an emotion. From the Sahyadri mountains that witnessed Chhatrapati Shivaji Maharaj's bravery to the bustling streets of Mumbai that never sleep, this platform is a tribute to the diverse heritage and unstoppable spirit of the Marathi soil.
+                    </p>
+                    <div class="flex justify-center space-x-4 items-center">
+                        <div class="h-[1px] w-12 bg-orange-500/50"></div>
+                        <span class="text-xs uppercase tracking-[0.5em] text-orange-500 font-bold">Jai Maharashtra</span>
+                        <div class="h-[1px] w-12 bg-orange-500/50"></div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="h-12 bg-black/40 flex items-center justify-center border-t border-white/5 relative z-50">
+            <p class="text-[10px] uppercase tracking-[0.4em] font-bold text-slate-500">
+                This web is developed by <span class="text-white">SHIVAM MUNDE</span>
+            </p>
+        </footer>
+    </div>
+    <script type="module" src="/script.js"></script>
+</body>
+</html>

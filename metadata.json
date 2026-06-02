@@ -1,0 +1,6 @@
+{
+  "name": "MahaExplore",
+  "description": "A comprehensive tourism and history guide dedicated exclusively to the state of Maharashtra, India.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
